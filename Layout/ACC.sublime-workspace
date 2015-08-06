@@ -1,0 +1,583 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"bol",
+				"bold"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"bo",
+				"both"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"Im",
+				"important"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"list-s",
+				"list-style"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"re",
+				"repeat-y"
+			],
+			[
+				"BO",
+				"border"
+			],
+			[
+				"ANCHO",
+				"ancho_page"
+			],
+			[
+				"ancho",
+				"ancho_page"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"ls",
+				"list-style"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"bore",
+				"border-top"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"i",
+				"inline"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"wi",
+				"width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "css/index.less",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "single.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 17494,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "about.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 288.0,
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"less",
+				"CSS Less-ish: Compile"
+			]
+		],
+		"width": 188.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/SALAMANDRA/AutoCristalesColombia/Con Fundation/css/index.less",
+		"/Volumes/SALAMANDRA/AutoCristalesColombia/Con Fundation/about.html",
+		"/Volumes/SALAMANDRA/AutoCristalesColombia/index.html",
+		"/Volumes/SALAMANDRA/AutoCristalesColombia/Con Fundation/contacto.html",
+		"/F/AutoCristalesColombia/Con Fundation/css/index.less",
+		"/F/AutoCristalesColombia/Con Fundation/index2.html.html",
+		"/F/AutoCristalesColombia/Con Fundation/index.html",
+		"/F/AutoCristalesColombia/css/index.css",
+		"/F/AutoCristalesColombia/css/base.css",
+		"/F/AutoCristalesColombia/css/bjqs.css",
+		"/F/AutoCristalesColombia/ABC.sublime-project",
+		"/F/AutoCristalesColombia/index.html",
+		"/F/AutoBidriosColombia/css/index.less",
+		"/F/AutoBidriosColombia/index.html",
+		"/H/wamp/www/portuguesahoy.com/wp-content/themes/Portuguesahoy/index.php",
+		"/H/wamp/www/portuguesahoy.com/wp-content/themes/Portuguesahoy/loop.php",
+		"/F/AutoBidriosColombia/about.html",
+		"/F/qq/index.html",
+		"/C/wamp/www/qq/index.html",
+		"/F/qq/js/jquery.js",
+		"/F/AutoBidriosColombia/js/jquery.js",
+		"/F/AutoBidriosColombia/css/foundation-icons/foundation-icons.css",
+		"/F/AutoBidriosColombia/css/foundation-icons/preview.html",
+		"/F/AutoBidriosColombia/css/demo.css",
+		"/F/AutoBidriosColombia/css/bjqs.css",
+		"/H/wamp/www/portuguesahoy.com/wp-content/themes/Portuguesahoy/css/general.less",
+		"/E/AutoBidriosColombia/css/index.css",
+		"/C/wamp/www/portabily.com/index.html",
+		"/C/wamp/www/portabily.com/css/index.less",
+		"/C/Users/Miguel/AppData/Local/Temp/fz3temp-1/conexion.php",
+		"/D/Resp_Arte_Publico/Artes/Arte.ai/_Tarjetas/_Boda/Hermer Viviana 1051/f.xml",
+		"/D/Resp_Arte_Publico/Artes/Arte.ai/_Tarjetas/_Boda/Hermer Viviana 1051/Lista11.xml",
+		"/C/Users/Miguel/AppData/Local/Temp/fz3temp-1/wp-config.php",
+		"/C/wamp/www/Nueva/index.php",
+		"/C/Users/Miguel/AppData/Local/Temp/fz3temp-1/index 2.php",
+		"/C/Users/Miguel/AppData/Local/Temp/fz3temp-1/loop.php",
+		"/D/Resp_Arte_Publico/Artes/Arte.ai/_Tarjetas/_Boda/Hermer Viviana 1051/Lista8.xml",
+		"/D/Resp_Arte_Publico/Artes/Arte.ai/_Tarjetas/_Baby Shower/Dereck/Lista5.xml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"logo",
+			"myModal2",
+			"reveal-modal",
+			"fondo_item",
+			"imagen",
+			"        \n",
+			"lista",
+			"cont_secciones_footer",
+			"footer",
+			"cont_form_foot",
+			"footer",
+			"    \n",
+			"ini",
+			"lista_head",
+			"lista_top_izq",
+			"link",
+			"catalogo_cont",
+			"ancho_page;",
+			"news_cont",
+			"paginador",
+			"seccion",
+			"catalogo_cont",
+			"item",
+			"descripcion",
+			"campo_style",
+			"conte_bar_busq",
+			"banner-slide",
+			"ini",
+			"con_menu_top",
+			"icon_format",
+			"a_hover_und_line",
+			"lista_izq_top",
+			"cont_secciones_top",
+			"tm_icon",
+			"size",
+			"icon_size",
+			"lista_izq_top",
+			"tm",
+			"lista_izq_top",
+			"a_hover_und_line",
+			"lista_izq_top",
+			"list_men_top",
+			"cont_list_men_top",
+			"con_menu_top",
+			".js",
+			"myModal",
+			"tm_icon",
+			"foo",
+			"tama",
+			"tam",
+			"div_gral",
+			"menu_principal",
+			"custom-dropdown",
+			"conte_bar_busq",
+			"cont_form_foot",
+			"conte_bar_busq",
+			"contenedor_para_secciones",
+			"conte_bar_busq",
+			"form_foot",
+			"cont_form_foot",
+			"conte_bar_busq",
+			"form_foot",
+			"cont_form_foot",
+			"boderdiv",
+			"conte_bar_busq",
+			"contenedor_para_secciones",
+			"conte_bar_busq",
+			"button",
+			"campo_style",
+			"lista_footer",
+			"font-size",
+			"lista",
+			"listas",
+			"conte_bar_busq",
+			"div_gral",
+			"boderdiv",
+			"campo_style",
+			"con_menu_top",
+			"cont_foot",
+			"cont_foot lista_footer",
+			"bac",
+			"bas",
+			"foot",
+			"secc",
+			"catalogo_cont",
+			"item_content",
+			"item",
+			"publi",
+			"nav",
+			"a_hover_und_line",
+			"sin_scroll",
+			"a_hover_und_line",
+			"colo",
+			"\n|",
+			"cont_bot_nav",
+			"slider",
+			"bot",
+			"bot_nav_reposo.png",
+			"cont_bot_nav",
+			"back_slider_navi",
+			"back_menu_navi",
+			"conte",
+			"separador-contenedor",
+			"contendor",
+			"separador-contenedor",
+			"Rita",
+			"rITA",
+			"Sr. José Fajardo y Sra.",
+			"Sr. Gregorio Rodríguez y Sra. ",
+			"Jeanny",
+			"Sr. José Fajardo y Sra.",
+			"José"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "css/index.less",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 15459.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "single.html",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 328.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 17494,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 320.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "about.html",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.463815789474,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
