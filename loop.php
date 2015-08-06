@@ -18,11 +18,11 @@
     <div class="row">
     	<hr>
 <?php while ( have_posts() ) : the_post(); ?>
-    <div class="item_content large-4 medium-4 columns">
+    <div class="item_content large-4 medium-6 columns">
 
-      <div class="items large-12 medium-12 columns reset">
-        <div class="fondo_item">
-            <div class="imagen large-12 medium-12 columns reset">
+      <div class="items large-12 medium-12 small-12 columns reset">
+        <div class="fondo_item large-12 medium-12 small-12 columns">
+            <div class="imagen">
             <a href="#" data-reveal-id="myModal1">
 
 				<?php if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) {
@@ -34,9 +34,11 @@
 						if ($postimage) {
 	
 						echo '<img src="'.$postimage.'" alt="" />';
-						}else{
-							echo '<img src="http://tupagina.com/thumbail_generica.png" alt="Thumbnail genérica" />';
-						}
+						} else{
+							
+							$src = "/ACC_WP/wp-content/themes/ACC/img/fondo_item.jpg";
+							echo "<img src='$src' />";
+					 }
 					} 
 				?>  	
 
@@ -64,6 +66,21 @@
     </div>
 
 <?php endwhile; ?>  
+
+
+<div class="contenedor"><!-- HEAD NOTICIAS -->
+  <div class="separador-contenedor"><!--Este div sirve para contener elementos con padding top bottom-->
+    <div class="seccion">
+      <div class="etiqueta">
+        NOTICIAS
+      </div>
+    </div>
+   </div> 
+</div>
+
+
+
+<?php relacionados("AAA"); ?>
 
   </div>
   </div><!--Fin catalogo_cont-->

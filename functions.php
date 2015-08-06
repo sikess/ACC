@@ -709,74 +709,6 @@ $args = array(
 
 
 
-// BUCLE PARA LOS POST RELACIONADOS
-function relacionados($titulo){
-
-
-$cates=current_category();
-
-$args = array(
-
-        'cat'=>$cates,
-        'showposts'=>10,
-        'orderby'=>'date',
-        'order' => 'DESC',
-
-    );
- $ncomentario=get_comments_number();
-
-    echo '<div class="elements_mas_coment">';
-    echo '<div class="titulo_seccion">';echo $titulo; echo'</div>';
-    $que_posts = new WP_Query($args);
-    while ($que_posts->have_posts()):
-       // $tieneComments = (get_comments_number()>0) ? true : false;
-      //  if ($tieneComments){
-       
-        //if ():
-           // echo"paso";
-
-            echo '<div class="contne_mas_coment">';
-            echo '<div class="cuerp_mas_comet">';
-            $que_posts->the_post();
- 
-                          
-            echo '<div class="img_pots_mas_coment">';
-                echo'<a href="'; the_permalink(); echo'">'; the_post_thumbnail('mas_comentados'); echo'</a>';
-            echo '</div>';
-
-            echo'<div class="titulo_post_mas_coment">';
-              echo'<a href="'; the_permalink(); echo'">'; the_title(); echo'</a>';
-             /*the_excerpt();*/
-            echo'</div>';
-
-        echo'<div class="foot_comentado">';
-
-            echo "<ul>";
-                    echo "<li>"; comments_popup_link( __( '<span class="imgc"></span>', 'themename' ) );echo "</li>";
-                    echo "<li>|</li>";
-                     echo "<li>";   printf( __( '<a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a>', 'themename' ),
-                                    get_permalink(),
-                                    get_the_date( 'c' ),
-                                    get_the_date(),
-                                    get_author_posts_url( get_the_author_meta( 'ID' ) ),
-                                    sprintf( esc_attr__( 'Ver por %s', 'themename' ), get_the_author() ),
-                                    get_the_author());
-                    echo "</li>"; 
-                    echo "<li>|</li>";       
-                    echo "<li>";the_category( ', ' );echo"</li>";              
-             echo "</ul>";
-        echo'</div>';//.foot_comentado
-       
-        echo'</div>';//.contne_mas_coment
-        echo'</div>';//..cuerp_mas_comet
-
-    endwhile;
-    echo'</div>';
- //endif;   
-
-}
-
-// .BUCLE PARA LOS POST RELACIONADOS
 
 
 function current_category() {
@@ -789,7 +721,7 @@ function current_category() {
     }
 } 
 
-
+include("newsrelacionadas.php");
 
 // BUCLE PRO CATEGORIA SIDE BARS
 function por_categoria($titulo,$categoria,$n_post){
