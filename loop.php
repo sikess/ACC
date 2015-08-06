@@ -33,11 +33,11 @@
 					$postimage = get_post_meta($post->ID, 'post-image', true);
 						if ($postimage) {
 	
-						echo '<img src="'.$postimage.'" alt="" />';
+						echo '<img class=imagen src="'.$postimage.'" alt="" />';
 						} else{
 							
-							$src = "/ACC_WP/wp-content/themes/ACC/img/fondo_item.jpg";
-							echo "<img src='$src' />";
+							$srcc = '<img class=imagen src="'.IMAGES.'/fondo_item.jpg" alt="" />';
+							echo $srcc;
 					 }
 					} 
 				?>  	

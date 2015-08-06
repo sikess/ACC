@@ -24,17 +24,17 @@ $args = array(
         $que_posts->the_post();
       ?>
 
-<div class="news_cont"> <!-- CONTENEDOR DE NOTICIAS -->
-   <div class="news_content">
-        <div class="news">
 
-            <div class="fondo_news">
-                <div class="imagen">
+   <div class="news_content large-6 medium-6 small-12 columns">
+        <div class="news large-12 medium-12 small-12 columns reset">
+
+            <div class="large-12 medium-12 small-12 columns fondo_news">
+                <div class="large-12 medium-12 small-12 columns imagen">
                     <?php echo'<a href="'; the_permalink(); echo'">'; the_post_thumbnail('mas_comentados'); echo'</a>'; ?>
                 </div>
             </div>
 
-            <div class="titulo_news">
+            <div class="large-12 medium-12 small-12 columns titulo_news">
                 <?php echo'<a href="'; the_permalink(); echo'">'; the_title(); echo'</a>'; ?>
             </div>
  <?php
@@ -47,8 +47,8 @@ $args = array(
                         get_the_author()
                     );
                 ?>
-            <div class="cont_descripcion_news">
-              <div class="descripcion_news">
+
+              <div class="large-12 medium-12 small-12 columns descripcion_news">
                 
 
                     
@@ -60,8 +60,8 @@ $args = array(
            </div>
 
         </div>
-    </div>
-</div>    
+   
+  
             
  <?php
                

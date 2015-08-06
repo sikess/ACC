@@ -26,6 +26,19 @@ if ( ! isset( $content_width ) )
  */
 
 
+// RUTA IMAGENES
+define('TEMPPATH', get_bloginfo('template_directory'));
+define('IMAGES', TEMPPATH. "/img");
+function make_href_root_relative($input) {
+    return preg_replace('!http(s)?://' . $_SERVER['SERVER_NAME'] . '/!', '/', $input);
+}
+
+function root_relative_permalinks($input) {
+    return make_href_root_relative($input);
+}
+add_filter( 'the_permalink', 'root_relative_permalinks' );
+// 
+
 function add_jquery_script() {
     // wp_deregister_script( 'add_jquery_script' );
     wp_register_script( 'add_jquery_script',  get_stylesheet_directory_uri() . '/js/vendor/jquery.js');
