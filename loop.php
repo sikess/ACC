@@ -36,7 +36,7 @@
 						echo '<img class=imagen src="'.$postimage.'" alt="" />';
 						} else{
 							
-							$srcc = '<img class=imagen src="'.IMAGES.'/fondo_item.jpg" alt="" />';
+							$srcc = '<img style="text-align:center;"  src="'.IMAGES.'/fondo_item.jpg" alt="" />';
 							echo $srcc;
 					 }
 					} 
