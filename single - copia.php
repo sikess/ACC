@@ -6,24 +6,45 @@
 
 get_header(); ?>
 
-<div class="contenedor">
-  <div class="catalogo_cont"><!--Catalogo_cont-->
-    <div class="row">
+<div class="contenedor"><!--CONTENEDOR DE CUERPO Y LISTA DE POST-->
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	<div class="entre_seccion"></div><!--F entre_seccion-->
+
+	<div id="conte_cuerpo">
+
+	<div class="conte_todos_post">
+
+		<div id="primary">
+			<div id="content-sp">
+
+			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 					<header class="entry-header-sp">
+						
 							<div class="entry-title-sp"><?php the_title(); ?></div>
-						<hr>
+							
+					
+						<div class="entry-meta-sp">
+							<?php
+								printf( __( '<span class="meta-prep meta-prep-author">Publicado el </span><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a> <span class="meta-sep">', 'themename' ),
+									get_permalink(),
+									get_the_date( 'c' ),
+									get_the_date(),
+									get_author_posts_url( get_the_author_meta( 'ID' ) ),
+									sprintf( esc_attr__( 'Ver noticias por %s', 'themename' ), get_the_author() ),
+									get_the_author()
+								);
+							?>
+						</div><!-- .entry-meta -->
 					</header><!-- .entry-header -->
 
 					<div class="entry-content-sp">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
-						<hr>
+
 					<footer class="entry-meta-sp">
 						<?php
 							$tag_list = get_the_tag_list( '', ', ' );
@@ -51,16 +72,26 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 	
-			</div><!-- #content --><?php prod_relacionados(""); ?>
+			</div><!-- #content --><?php relacionados('Noticias relacionadas'); ?>
 		</div><!-- #primary -->
 
+		
+		
+		
 
-  </div>
-  </div><!--Fin catalogo_cont-->
 </div>
-    
+
+
+  
+
+</div>  
+
+</div>  </div> 
+
+<div class="entre_seccion"></div><!--F entre_seccion-->
 
 
 <div class="contenedor"><!-- Footer -->
+
 	<?php get_footer();  ?>
 </div><!-- .Footer -->

@@ -521,19 +521,20 @@ function los_recientes(){
 
 // LIMITA EL NUMERO DE PALABRAS DEL CONTENT
 
-function the_content_limit($max_char, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+function the_content_limit($max_char, $more_link_text = 'Leer más', $stripteaser = 0, $more_file = '') {
      $content = get_the_content($more_link_text, $stripteaser, $more_file);
      $content = apply_filters('the_content', $content);
      $content = str_replace(']]>', ']]&gt;', $content);
      $content = strip_tags($content);
-    if (strlen($_GET['p']) > 0) {
-         // echo "<p>";
+    if (strlen($_GET['p']) > $max_char) {
+
+         echo "<p>";
          echo $content;
          echo "...";
          echo "&nbsp;<a href='";
          the_permalink();
          echo "'>".$more_link_text."</a>";
-         // echo "</p>";
+         echo "</p>";
      }
      else if ((strlen($content)>$max_char) && ($espacio = strpos($content, " ", $max_char ))) {
          $content = substr($content, 0, $espacio);
@@ -733,8 +734,8 @@ function current_category() {
         return $var[0]->cat_ID;
     }
 } 
-
-include("newsrelacionadas.php");
+include("prod_relacionados.php");
+include("news_relacionados.php");
 
 // BUCLE PRO CATEGORIA SIDE BARS
 function por_categoria($titulo,$categoria,$n_post){

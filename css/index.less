@@ -596,14 +596,14 @@ vertical-align: middle !important;
 .separador-contenedor{
 	margin: 0 auto;
 	padding: 40px 0 40px 0;
-	width: 1024px;
+	// width: 1024px;
 	// background-color: red;
 	clear: both;
 }
 
 .seccion{
 	height: 71px;
-	width: 1024px;
+	// width: 1024px;
 	clear: both;
 }
 
@@ -654,24 +654,24 @@ vertical-align: middle !important;
 // FORMULARIO BUSQUEDA
 .formato_buscar{
 	padding: 8px 0 0 20px !important;
-input[type="email"], input[type="text"], input[type="file"] input[type="select"]{
-    width: 240px !important;
-    height: 50px !important;
-    .radios(5px, 0, 0, 5px)!important;
-    border: 1px solid @rojo !important;
-    // padding: 8px;
-    font-size: 1em !important;
-    border: solid 1px #A32C24 ;
-    border-right: 0 !important;
-    float: left !important;
-    color: @rojo;
+	input[type="email"], input[type="text"], input[type="file"] input[type="select"]{
+		width: 240px !important;
+		height: 50px !important;
+		// .radios(5px, 0, 0, 5px)!important;
+		border: 1px solid @rojo !important;
+		// padding: 8px;
+		font-size: 1em !important;
+		border: solid 1px #A32C24 ;
+		border-right: 0 !important;
+		float: left !important;
+		color: @rojo;
     
 }
 
-button[type="submit"]{
+button[type="submit"], input[type="submit"]{
 	height: 50px !important;
 	width: 76px;
-	.radios(0, 5px, 5px, 0);
+	// .radios(0, 5px, 5px, 0);
 	border: 0px;
 	font-size: 15px;
 	position: absolute;
@@ -808,17 +808,15 @@ button[type="submit"]{
 
 .imagen img{
 	.centrar_div !important;
-	// width: 130px;
-	height: auto;
+	// // width: 130px;
+	// // height: auto;
 	text-align: center;
-	position: absolute;
-top:0;
-left:0;
-right:0;
-bottom:0;
-
-
-
+	// position: relative;
+	// top:0;
+	// left:0;
+	// right:0;
+	// bottom:0;
+	display: block;
 }
 
 .titulo_item{
@@ -846,7 +844,7 @@ bottom:0;
 .descripcion{
 	.centrar_div;
 	width: 100%;
-	height: 63px;
+	height: 75px;
 	color: @rojo;
 	text-align: center justify;
 	background-color: @amarillo;
@@ -916,7 +914,7 @@ bottom:0;
 }
 
 .news_content{
-	margin: 0 auto;
+	// margin: 0 auto;
 	// width: 500px;
 	height: 100%;
 	padding: 0px 20px 0px 20px;
@@ -1017,23 +1015,24 @@ bottom:0;
 .cont_foot{
 	.gral_background("../img/bg_footer.png", bottom, no-repeat);
 	// .centrar_div;
-	background-color: @rojo;
+	background-color: @rojo !important;
 	width: 100%;
-	height: 325px;
+	height: 100%;
+	// height: 325px;
 	border-top: 12px solid @amarillo;
 }
 
 .footer{
 	.centrar_div ;
-	height: 300px;
+	// height: 300px;
 	// width: ancho_page;
 	color: #FFF;
 	
 }
 
 .cont_secciones_footer{
-	width: 330px;
-	height: 315px;
+	// width: 330px;
+	// height: 315px;
 	float: left;
 	// font-size: 10px;
 	// background-color: red;
@@ -1158,6 +1157,14 @@ bottom:0;
 }
 
 // FIN PARRAFOS
+
+
+// SINGLE
+.entry-title-sp{
+	font-size: 2em;
+	color:@rojo;
+}
+// FIN SINGLE
 
 // FORMULARIO
 
