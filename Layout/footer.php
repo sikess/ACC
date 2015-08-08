@@ -16,20 +16,20 @@
         </div>
 
 <div class="cont_secciones_footer">
-    <div class="secciones_footer ">
+  <div class="secciones_footer ">
     <p>NEWS LETTER</p>
     <ul>
-    <li>Mantente informado acerca de nuestros productos, suscríbete a nuestro News Letter</li>
+      <li>Mantente informado acerca de nuestros productos, suscríbete a nuestro News Letter</li>
     </ul>
-    <div class="cont_form_foot formato_buscar">
+  <div class="cont_form_foot">
     <input  class="campo_style" type="email" name="web" placeholder="e-mail">
     <button cla id="" type="submit" id=""><span class="fi-mail icon_format"></span></button>
-    </div>
+  </div>
     <div class="derecho">
-    Auto Cristales Colombia S.A.S. ®<br />
-    Todos los derechos reservados 2015
+      Auto Cristales Colombia S.A.S. ®<br />
+      Todos los derechos reservados 2015
     </div>
-    </div>
+  </div>
 </div>
 
 
