@@ -49,6 +49,7 @@ body {
 @ancho_page:1000px;
 @rojo: #A32C24;
 @amarillo:#EBD716;
+@blanco:#FFF;
 
 // MIXIN
 .bg_rojo{
@@ -449,7 +450,7 @@ vertical-align: middle !important;
 	color: @rojo;
 }
 
-/*MENU PRINCIPAL*/
+/*MENU PRIMARY*/
 .menu_principal {
 	/*background-color:#069;*/
 	height:38px;
@@ -508,6 +509,110 @@ vertical-align: middle !important;
 	 background-position: 93% 62%;
 	 
 	}
+
+
+
+//SUBMENU
+#access ul ul {/*Sub menu escondido*/
+	
+	background-color:@rojo;
+	display: none;
+	position: absolute;
+	top: 39px;
+	left: -8px;
+	float: left;
+	width: 180px;
+	z-index: 99999;
+	/*background-color:#0C6;*/
+	// behavior: url(PIE.htc);
+}
+
+#access ul ul li {
+	min-width: 180px;
+	
+}
+
+#access ul ul ul {
+	left:5%;
+	top: 12%;
+}
+
+#access ul ul a { /*links de Sub menu escondido*/
+	//background: #000;
+	width:150px;
+	height:30px;
+	border-bottom: 2px solid @rojo;
+	border-bottom-style: groove;
+}
+
+#access li:hover > a{
+	
+	background-image: url('../img/degradado_men_princ_over.png');
+	background-position: center;
+	background-repeat:repeat-x;
+	// border-bottom: 2px solid @verde;
+	// background-color: @azul;
+	//.a_hover_und_line(@color_link,@bg_hover,@color_link_fondo,@font_weight,@text_deco,@padding_link,@font_size) {
+	//.a_hover_und_line(@rojo, inherit, normal,underline,"","");
+	
+}	
+
+#access ul ul :hover > a {
+	color: @blanco;
+	text-decoration: none;
+	background-image:none;
+	background-color: @rojo;
+}
+
+#access ul li:hover > ul a {
+		padding-bottom:10px;
+		
+}
+	
+#access ul li:hover > ul { /*ul del submenu*/
+	display:inherit;
+	padding-top:7px;
+	padding-bottom:7px;	
+	
+}
+
+#access ul li.current_page_item > a,
+#access ul li.current_page_ancestor > a,
+#access ul li.current-menu-ancestor > a,
+#access ul li.current-menu-item > a,
+#access ul li.current-menu-parent > a {
+	color: @blanco
+}
+
+* html #access ul li.current_page_item a,
+* html #access ul li.current_page_ancestor a,
+* html #access ul li.current-menu-ancestor a,
+* html #access ul li.current-menu-item a,
+* html #access ul li.current-menu-parent a,
+* html #access ul li a:hover {
+	color: @blanco;
+}
+
+#access .menu-header ul .con-sub-menu > a{
+	 background-image:url(../img/flecha_down.png);
+	 background-position:right;
+	 background-repeat:no-repeat;
+	 background-position: 93%;
+	 padding-right:25px;
+}
+
+#access .menu-header ul .con-sub-menu > a:hover{
+	 background-position: 93% 62%;
+}
+
+#access .menu-header .serpa_men_princ {
+	background-image: url('../img/separa_men_princ.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 10px 0px 10px 0px;
+}
+
+
 /*////FIN MENU NAV//////*/	
 
 
