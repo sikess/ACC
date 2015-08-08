@@ -36,7 +36,7 @@
 						echo '<img class=imagen src="'.$postimage.'" alt="" />';
 						} else{
 							
-							$srcc = '<img style="text-align:center;"  src="'.IMAGES.'/fondo_item.jpg" alt="" />';
+							$srcc = '<img src="'.IMAGES.'/fondo_item.jpg" alt="" />';
 							echo $srcc;
 					 }
 					} 
@@ -53,11 +53,11 @@
           	<div class="descripcion">
 			<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 		<div class="entry-summary">
-			<?php the_content_limit('280'); /*the_excerpt_rss();*/ ?>
+			<?php the_content_limit('40'); /*the_excerpt_rss();*/ ?>
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<?php the_content_limit('40'); /*the_excerpt_rss();*/ ?>
+			<?php the_content_limit('55'); /*the_excerpt_rss();*/ ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>          </div>
@@ -79,8 +79,7 @@
 </div>
 
 
-
-<?php relacionados("AAA"); ?>
+<?php news_relacionados(""); ?>
 
   </div>
   </div><!--Fin catalogo_cont-->
