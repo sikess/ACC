@@ -24,25 +24,7 @@ get_header(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 						<hr>
-					<footer class="entry-meta-sp">
-						<?php
-							$tag_list = get_the_tag_list( '', ', ' );
-							if ( '' != $tag_list ) {
-								$utility_text = __( 'Pubicado en %1$s y tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'themename' );
-							} else {
-								$utility_text = __( 'Pubicado en %1$s. Etiquetas <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'themename' );
-							}
-							printf(
-								$utility_text,
-								get_the_category_list( ', ' ),
-								$tag_list,
-								get_permalink(),
-								the_title_attribute( 'echo=0' )
-							);
-						?>
-
-						<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
-					</footer><!-- .entry-meta -->
+					
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 			
