@@ -1,6 +1,6 @@
 <?php 
 // BUCLE PARA LOS POST RELACIONADOS
-function relacionados($titulo){
+function news_relacionados($titulo){
 
 
 $cates=current_category();
