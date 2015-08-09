@@ -79,7 +79,7 @@
 </div>
 
 
-<?php news_relacionados(""); ?>
+<?php //news_relacionados("","Noticias"); ?>
 
   </div>
   </div><!--Fin catalogo_cont-->

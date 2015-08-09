@@ -1,5 +1,8 @@
 <?php
+
 /**
+* Template Name: Full-width, no sidebar
+ * Description: A full-width template with no sidebar
  * @package WordPress
  * @subpackage themename
  */
@@ -10,40 +13,37 @@ get_header(); ?>
   <div class="catalogo_cont"><!--Catalogo_cont-->
     <div class="row">
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+				<?php the_post(); ?>
 
-				
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
-					<header class="entry-header-sp">
-							<div class="entry-title-sp"><?php the_title(); ?></div>
-						<hr>
+					<header class="entry-header">
+						<h1 class="entry-title-sp"><?php the_title(); ?></h1>
 					</header><!-- .entry-header -->
-
-					<div class="entry-content-sp">
+					<hr>
+					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
+						<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-content -->
-						<hr>
-					
 				</article><!-- #post-<?php the_ID(); ?> -->
 
-			
 				<?php //comments_template( '', true ); ?>
 
-			<?php endwhile; // end of the loop. ?>
-
-	
-			</div><!-- #content --><?php //prod_relacionados("","Productos"); ?>
+			</div><!-- #content -->
 		</div><!-- #primary -->
+<?php //if (function_exists('wp_corenavi')) wp_corenavi(); ?>
 
 
-  </div>
-  </div><!--Fin catalogo_cont-->
-</div>
-    
+	<?php prod_relacionados(""); ?>
 
+	</div>
+
+</div>  
+
+</div>  
 
 <div class="contenedor"><!-- Footer -->
+
 	<?php get_footer();  ?>
-	<?php wp_footer(); ?>
 </div><!-- .Footer -->
+

@@ -4,7 +4,11 @@
  * @subpackage themename
  */
 
-get_header(); ?>
+get_header(); 
+
+unregister_sidebar( 'Sidebar');
+?>
+
 
 
 <?php get_template_part( 'loop', 'index' ); ?>

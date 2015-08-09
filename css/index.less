@@ -1280,16 +1280,25 @@ button[type="submit"], input[type="submit"]{
 	padding: 3px;
 }
 
-.cont_cantacto input[type="email"], input[type="text"], input[type="file"] input[type="select"], textarea{
-    width: 450px;
-    height: 40px;
-    .el_radio();
-    border: 0;
-    padding: 8px;
-    font-size: 1em;
+.cont_cantacto input[type="email"], input[type="text"], input[type="file"], input[type="email"]{
+    width: 100% !important;
+    height: 40px !important;
+    // .el_radio() !important;
+    border: 0 !important;
+    padding: 8px !important;
+    font-size: 1em !important;
     border: solid 1px @rojo !important;
     font-family:Arial, Helvetica, sans-serif;
 }
+
+ textarea{
+ 	width: 100% !important;
+    border: 0 !important;
+    padding: 8px !important;
+    font-size: 1em !important;
+    border: solid 1px @rojo !important;
+    font-family:Arial, Helvetica, sans-serif;
+ }
 
 .cont_cantacto textarea{
 	width: 455px;
@@ -1298,21 +1307,23 @@ button[type="submit"], input[type="submit"]{
 
 }
 
-.cont_cantacto .campo button[type="submit"]{
-	height: 56px;
-	width: 100px;
-	.radios(5px, 5px, 5px, 5px );
-	border: 0px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size: 15px;
+ input[type="submit"]{
+	height: 150px! !important;
+	width: 100%;
+	// .radios(5px, 5px, 5px, 5px ) !important;
+	border: 0px !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	font-size: 15px !important;
 	cursor: pointer;
-	background-color: @amarillo;
+	background-color: @amarillo !important;
 	color: @rojo;
-	font-weight: bold;
-	clear: both;
-	margin-left: 350px;
-	padding: 0px;
+	font-weight: bold !important;
+	// clear: both !important;
+	// margin-left: 350px !important;
+	padding: 0px !important;
 }
+
+
 
   .cont_lista_contact{
   	width: 200px;

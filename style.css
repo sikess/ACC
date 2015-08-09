@@ -4,5 +4,15 @@ Theme URI: http://www.salamanderstudio.com.ve
 Author: Miguel Pérez
 Author URI: http://www.salamanderstudio.com.ve
 Version: 0.9.1
+License: Mine
+License URI: AS
+Description: SAS
 */
 
+.wp-caption{}
+.wp-caption-text{}
+.sticky{}
+.gallery-caption{}
+.bypostauthor{}
+.alignright{}
+.alignleft.aligncenter {}

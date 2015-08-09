@@ -21,7 +21,8 @@
 	 */
 	global $page, $paged;
 
-	wp_title( '|', true, 'right' );
+	//wp_title( '|', true, 'right' );
+  add_filter( 'wp_title', 'filter_function_name', 10, 2 );
 
 	// Add the blog name.
 	bloginfo( 'name' );
@@ -58,9 +59,9 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/index.css" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/foundation.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/foundation-icons/foundation-icons.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri('template_directory');?>/css/index.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri('template_directory');?>/css/foundation.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri('template_directory');?>/css/foundation-icons/foundation-icons.css" type="text/css" />
 	
 
 
@@ -110,7 +111,7 @@
 
      <div class="large-6 medium-6 small-12 columns reset"> 
 	       <div id="logo_y_form" class="large-12  medium-12 small-12 columns reset">
-	         <img data-interchange="[<?php bloginfo('template_directory');?>/img/logo_s.png, (small)], [<?php bloginfo('template_directory');?>/img/logo_m.png, (medium)],[<?php bloginfo('template_directory');?>/img/default.png, (large)]">
+	         <img data-interchange="[<?php echo get_template_directory_uri('template_directory');?>/img/logo_s.png, (small)], [<?php echo get_template_directory_uri('template_directory');?>/img/logo_m.png, (medium)],[<?php echo get_template_directory_uri('template_directory');?>/img/default.png, (large)]">
 	       </div>
         </div>
         
@@ -132,7 +133,11 @@
    <div class="large-2 medium-2 columns  hide-for-small reset">
     <div id="inicio_link">
       <ul id="" class="">
-        <li><a href="index.php" class="fi-home tm"></a></li>
+        <li><a href="
+
+<?php echo esc_url( home_url( '/' ) ); ?>
+
+" class="fi-home tm"></a></li>
      </ul>   
     </div>
 </div>
@@ -144,7 +149,7 @@
   <nav class="top-bar bg_amarillo" data-topbar role="navigation">
 	  <ul class="title-area bg_amarillo mi_tb">
 	    <li class="name">
-	      <h1><a href="index.php"><i class="fi-home tm"> </i></a></h1>
+	      <h1><a href="<?php home_url('/'); ?>"><i class="fi-home tm"> </i></a></h1>
 	    </li>
 	     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 	    <li class="toggle-topbar  bg_amarillo mi_tb"><a href="#"><i class="fi-list tm"> </i></a></li>
@@ -180,7 +185,7 @@
 <?php 
  if (is_home()){
 
-  include("slider.php");
+ get_template_part( 'slider', 'index' );
 
 }
  ?>

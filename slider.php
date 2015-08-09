@@ -5,19 +5,19 @@
     
   <ul class="sexample-orbit" data-orbit>
     <li>
-      <img src="<?php bloginfo('template_directory');?>/img/slider/150-Reportes.jpg" alt="slide 1" />
+      <img src="<?php echo get_template_directory_uri('template_directory');?>/img/slider/150-Reportes.jpg" alt="slide 1" />
       <div class="orbit-caption">
         Caption One.
       </div>
     </li>
     <li class="active">
-      <img src="<?php bloginfo('template_directory');?>/img/slider/img01.png" alt="slide 2" />
+      <img src="<?php echo get_template_directory_uri('template_directory');?>/img/slider/img01.png" alt="slide 2" />
       <div class="orbit-caption">
         Caption Two.
       </div>
     </li>
     <li>
-      <img src="<?php bloginfo('template_directory');?>/img/slider/personal.png" alt="slide 3" />
+      <img src="<?php echo get_template_directory_uri('template_directory');?>/img/slider/personal.png" alt="slide 3" />
       <div class="orbit-caption">
         Caption Three.
       </div>

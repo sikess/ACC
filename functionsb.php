@@ -24,17 +24,39 @@ if ( ! isset( $content_width ) )
 /**
  * Add jQuery
  */
+
+
+// RUTA IMAGENES
+define('TEMPPATH', get_template_directory_uri('template_directory'));
+define('IMAGES', TEMPPATH. "/img");
+function make_href_root_relative($input) {
+    return preg_replace('!http(s)?://' . $_SERVER['SERVER_NAME'] . '/!', '/', $input);
+}
+
+function root_relative_permalinks($input) {
+    return make_href_root_relative($input);
+}
+add_filter( 'the_permalink', 'root_relative_permalinks' );
+// 
+
 function add_jquery_script() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js');
-    wp_enqueue_script( 'jquery' );
+    // wp_deregister_script( 'add_jquery_script' );
+    wp_register_script( 'add_jquery_script',  get_stylesheet_directory_uri() . '/js/vendor/jquery.js');
+    wp_enqueue_script( 'add_jquery_script' );
 }    
 add_action('wp_enqueue_scripts', 'add_jquery_script');
+
+function foundationjs() {
+  
+    wp_register_script( 'foundationjs',  get_stylesheet_directory_uri() . '/js/foundation.min.js');
+    wp_enqueue_script( 'foundationjs' );
+}    
+add_action('wp_enqueue_scripts', 'foundationjs');
 
 
 function modernizr() {
     
-    wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js');
+    wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/vendor/modernizr.js');
     wp_enqueue_script( 'modernizr' );
 }    
 add_action('wp_enqueue_scripts', 'modernizr');
@@ -221,70 +243,8 @@ if (!current_user_can('manage_options')) {
 
 
 ?>
-<?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
-//   change the UA-XXXXX-X to be your site's ID
-/*add_action('wp_footer', 'async_google_analytics');
-function async_google_analytics() { ?>
-    <script>
-    var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-        (function(d, t) {
-            var g = d.createElement(t),
-                s = d.getElementsByTagName(t)[0];
-            g.async = true;
-            g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g, s);
-        })(document, 'script');
-    </script>
-<?php }*/ ?>
-<?php /*
- * A default custom post type. DELETE from here to the end if you don't want any custom post types
- */
-/*add_action('init', 'create_boilertemplate_cpt');
-function create_boilertemplate_cpt() 
-{
-  $labels = array(
-    'name' => _x('HandcraftedWPTemplate CPT', 'post type general name'),
-    'singular_name' => _x('HandcraftedWPTemplate CPT Item', 'post type singular name'),
-    'add_new' => _x('Add New', 'handcraftedwptemplate_robot'),
-    'add_new_item' => __('Add New Item'),
-    'edit_item' => __('Edit Item'),
-    'new_item' => __('New Item'),
-    'view_item' => __('View Item'),
-    'search_items' => __('Search Items'),
-    'not_found' =>  __('No items found'),
-    'not_found_in_trash' => __('No items found in Trash'), 
-    'parent_item_colon' => ''
-  );
-  $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'show_ui' => true, 
-    'query_var' => true,
-    'rewrite' => true,
-    'capability_type' => 'page',
-    'hierarchical' => false,
-    'menu_position' => 20,
-    'supports' => array('title','editor')
-  ); 
-  register_post_type('handcraftedwptemplate_robot',$args);
-}*/
-/*
- * This is for a custom icon with a colored hover state for your custom post types. You can download the custom icons here 
- http://randyjensenonline.com/thoughts/wordpress-custom-post-type-fugue-icons/
- */
-/*add_action( 'admin_head', 'cpt_icons' );
-function cpt_icons() {
-    ?>
-    <style type="text/css" media="screen">
-        #menu-posts-handcraftedwptemplaterobot .wp-menu-image {
-            background: url(<?php bloginfo('template_url') ?>/images/robot.png) no-repeat 6px -17px !important;
-        }
-        #menu-posts-handcraftedwptemplaterobot:hover .wp-menu-image, #menu-posts-handcraftedwptemplaterobot.wp-has-current-submenu .wp-menu-image {
-            background-position:6px 7px!important;
-        }
-    </style>
-<?php }*/ 
 
+<?php 
 
 function print_video_thumb_backward($post, &$thumb_url) {
     $video_id = get_post_meta($post->ID, 'vids', true);
@@ -470,15 +430,15 @@ function the_content_video($more_link_text = null, $stripteaser = 0, $more_file 
     echo get_the_content_video($more_link_text, $stripteaser, $more_file);
 }
 
-function get_url($url) {
-    $fp = fopen( $url, 'r' );
-     $data = "";
-     while( !feof( $fp ) ) {
-         $buffer = trim( fgets( $fp, 4096 ) );
-         $data .= $buffer;
-     }
-    return $data;
-}
+// function get_url($url) {
+//     $fp = fopen( $url, 'r' );
+//      $data = "";
+//      while( !feof( $fp ) ) {
+//          $buffer = trim( fgets( $fp, 4096 ) );
+//          $data .= $buffer;
+//      }
+//     return $data;
+// }
 
 
 /*MAS POPULARE*/
@@ -512,10 +472,12 @@ function popularPosts($num) {
 
 ////CORTADOR DE IMAGENES
 if ( function_exists( 'add_image_size' ) ) {  
-    add_image_size('para_los_post', 367, 181, true); 
+    add_image_size('para_los_post', 299, 266, true);
+    add_image_size('modales', 177, 374, true);
     add_image_size('mas_comentados', 126, 75, true); 
     add_image_size('side_bar', 80, 80, true);
     add_image_size('entrada', 719, 440, true);
+    add_image_size('noticias', 483, 345, true);
    
 }  
 
@@ -527,6 +489,7 @@ function hmuda_image_sizes($sizes) {
         "mas_comentados" => __("Mas comentados"),
         "side_bar" => __("Para sidebar"),
         "entrada" => __("Normal"),
+        "noticias" => __("Noticias"),
     );  
     $newsizes = array_merge($sizes, $addsizes);  
     return $newsizes;  
@@ -560,21 +523,12 @@ function los_recientes(){
 
 // LIMITA EL NUMERO DE PALABRAS DEL CONTENT
 
-function the_content_limit($max_char, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+function the_content_limit($max_char, $more_link_text = 'Leer más', $stripteaser = 0, $more_file = '') {
      $content = get_the_content($more_link_text, $stripteaser, $more_file);
      $content = apply_filters('the_content', $content);
      $content = str_replace(']]>', ']]&gt;', $content);
      $content = strip_tags($content);
-    if (strlen($_GET['p']) > 0) {
-         // echo "<p>";
-         echo $content;
-         echo "...";
-         echo "&nbsp;<a href='";
-         the_permalink();
-         echo "'>".$more_link_text."</a>";
-         // echo "</p>";
-     }
-     else if ((strlen($content)>$max_char) && ($espacio = strpos($content, " ", $max_char ))) {
+if ((strlen($content)>$max_char) && ($espacio = strpos($content, " ", $max_char ))) {
          $content = substr($content, 0, $espacio);
          $content = $content;
          // echo "<p>";
@@ -654,7 +608,7 @@ function miplugin_register_sidebars(){
         "after_title" => "</h2>"
     ));
 }
-add_action('widgets_init','miplugin_register_sidebars');
+// add_action('widgets_init','miplugin_register_sidebars');
 ///.AGREGAS SIDEBARS
 
 //MAS COMENTADOS
@@ -761,74 +715,6 @@ $args = array(
 
 
 
-// BUCLE PARA LOS POST RELACIONADOS
-function relacionados($titulo){
-
-
-$cates=current_category();
-
-$args = array(
-
-        'cat'=>$cates,
-        'showposts'=>10,
-        'orderby'=>'date',
-        'order' => 'DESC',
-
-    );
- $ncomentario=get_comments_number();
-
-    echo '<div class="elements_mas_coment">';
-    echo '<div class="titulo_seccion">';echo $titulo; echo'</div>';
-    $que_posts = new WP_Query($args);
-    while ($que_posts->have_posts()):
-       // $tieneComments = (get_comments_number()>0) ? true : false;
-      //  if ($tieneComments){
-       
-        //if ():
-           // echo"paso";
-
-            echo '<div class="contne_mas_coment">';
-            echo '<div class="cuerp_mas_comet">';
-            $que_posts->the_post();
- 
-                          
-            echo '<div class="img_pots_mas_coment">';
-                echo'<a href="'; the_permalink(); echo'">'; the_post_thumbnail('mas_comentados'); echo'</a>';
-            echo '</div>';
-
-            echo'<div class="titulo_post_mas_coment">';
-              echo'<a href="'; the_permalink(); echo'">'; the_title(); echo'</a>';
-             /*the_excerpt();*/
-            echo'</div>';
-
-        echo'<div class="foot_comentado">';
-
-            echo "<ul>";
-                    echo "<li>"; comments_popup_link( __( '<span class="imgc"></span>', 'themename' ) );echo "</li>";
-                    echo "<li>|</li>";
-                     echo "<li>";   printf( __( '<a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a>', 'themename' ),
-                                    get_permalink(),
-                                    get_the_date( 'c' ),
-                                    get_the_date(),
-                                    get_author_posts_url( get_the_author_meta( 'ID' ) ),
-                                    sprintf( esc_attr__( 'Ver por %s', 'themename' ), get_the_author() ),
-                                    get_the_author());
-                    echo "</li>"; 
-                    echo "<li>|</li>";       
-                    echo "<li>";the_category( ', ' );echo"</li>";              
-             echo "</ul>";
-        echo'</div>';//.foot_comentado
-       
-        echo'</div>';//.contne_mas_coment
-        echo'</div>';//..cuerp_mas_comet
-
-    endwhile;
-    echo'</div>';
- //endif;   
-
-}
-
-// .BUCLE PARA LOS POST RELACIONADOS
 
 
 function current_category() {
@@ -840,8 +726,8 @@ function current_category() {
         return $var[0]->cat_ID;
     }
 } 
-
-
+include("prod_relacionados.php");
+include("news_relacionados.php");
 
 // BUCLE PRO CATEGORIA SIDE BARS
 function por_categoria($titulo,$categoria,$n_post){

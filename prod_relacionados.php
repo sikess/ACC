@@ -1,9 +1,9 @@
 <?php 
 // BUCLE PARA LOS POST RELACIONADOS
-function prod_relacionados($titulo){
+function prod_relacionados($titulo,$cates){
 
 
-$cates=current_category();
+//$cates=current_category();
 
 $args = array(
 
@@ -47,7 +47,7 @@ $args = array(
                 echo'<a href="'; the_permalink(); echo'">';the_post_thumbnail('para_los_post'); echo'</a>';
                 } else {
     
-                    $postimage = get_post_meta($post->ID, 'post-image', true);
+                    $postimage = get_post_meta(!empty( $post ) && $post->ID, 'post-image', true);
                         if ($postimage) {
     
                         echo '<img class=imagen src="'.$postimage.'" alt="" />';

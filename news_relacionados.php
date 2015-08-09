@@ -1,19 +1,20 @@
 <?php 
 // BUCLE PARA LOS POST RELACIONADOS
-function news_relacionados($titulo){
+function news_relacionados($titulo,$cates){
 
-
-$cates=current_category();
+//$catsy = get_the_category();
+//$cates = $catsy->cat_ID;
+//$cates=current_category();
 
 $args = array(
 
-        'cat'=>$cates,
+        'cat'=>'$cates',
         'showposts'=>2,
         'orderby'=>'date',
         'order' => 'DESC',
 
     );
- $ncomentario=get_comments_number();
+ //$ncomentario=get_comments_number();
 ?>
     <div class="conternedor">
     <div class="row">
@@ -29,9 +30,22 @@ $args = array(
         <div class="news large-12 medium-12 small-12 columns reset">
 
             <div class="large-12 medium-12 small-12 columns fondo_news">
-                <div class="large-12 medium-12 small-12 columns imagen">
-                    <?php echo'<a href="'; the_permalink(); echo'">'; the_post_thumbnail('mas_comentados'); echo'</a>'; ?>
-                </div>
+<?php if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) {
+    
+                echo'<a data-reveal-id="myModal1" href="'; the_permalink(); echo'">';the_post_thumbnail('para_los_post'); echo'</a>';
+                } else {
+    
+                    $postimage = get_post_meta($post->ID, 'post-image', true);
+                        if ($postimage) {
+    
+                        echo '<img class=imagen src="'.$postimage.'" alt="" />';
+                        } else{
+                            
+                            $srcc = '<img src="'.IMAGES.'/fondo_item.jp4g" alt="" />';
+                            echo $srcc;
+                     }
+                    } 
+                ?>      
             </div>
 
             <div class="large-12 medium-12 small-12 columns titulo_news">
