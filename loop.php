@@ -27,7 +27,7 @@
 
 				<?php if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) {
 	
-				echo'<a href="'; the_permalink(); echo'">';the_post_thumbnail('para_los_post'); echo'</a>';
+				echo'<a data-reveal-id="myModal1" href="'; the_permalink(); echo'">';the_post_thumbnail('para_los_post'); echo'</a>';
 				} else {
 	
 					$postimage = get_post_meta($post->ID, 'post-image', true);

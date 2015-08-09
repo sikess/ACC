@@ -28,7 +28,7 @@ get_header(); ?>
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 			
-				<?php comments_template( '', true ); ?>
+				<?php //comments_template( '', true ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
