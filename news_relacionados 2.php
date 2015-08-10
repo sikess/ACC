@@ -1,14 +1,10 @@
 <?php 
 // BUCLE PARA LOS POST RELACIONADOS
-function news_relacionados(){
+function news_relacionados($titulo,$cates){
 
-//$catsy = get_the_category();
-//$cates = $catsy->cat_ID;
-//$cates=current_category();
+$argsw = array(
 
-$args = array(
-
-        'cat'=>3,
+        'cat'=>'$cates',
         'showposts'=>2,
         'orderby'=>'date',
         'order' => 'DESC',
@@ -18,9 +14,9 @@ $args = array(
 ?>
     <div class="conternedor">
     <div class="row">
-
+ 
 <?php
-    $que_posts = new WP_Query($args);
+    $que_posts = new WP_Query($argsw);
     while ($que_posts->have_posts()):
         $que_posts->the_post();
       ?>
@@ -52,14 +48,14 @@ $args = array(
                 <?php echo'<a href="'; the_permalink(); echo'">'; the_title(); echo'</a>'; ?>
             </div>
  <?php
-                    // printf( __( '<a href="%1$s" rel="bookmark"><span class="calendar"></span><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a>' , 'themename' ),
-                    //     get_permalink(),
-                    //     get_the_date( 'c' ),
-                    //     get_the_date(),
-                    //     get_author_posts_url( get_the_author_meta( 'ID' ) ),
-                    //     sprintf( esc_attr__( 'Ver por %s', 'themename' ), get_the_author() ),
-                    //     get_the_author()
-                    // );
+                    printf( __( '<a href="%1$s" rel="bookmark"><span class="calendar"></span><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a>' , 'themename' ),
+                        get_permalink(),
+                        get_the_date( 'c' ),
+                        get_the_date(),
+                        get_author_posts_url( get_the_author_meta( 'ID' ) ),
+                        sprintf( esc_attr__( 'Ver por %s', 'themename' ), get_the_author() ),
+                        get_the_author()
+                    );
                 ?>
 
               <div class="large-12 medium-12 small-12 columns descripcion_news">

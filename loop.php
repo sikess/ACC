@@ -10,18 +10,33 @@
 
 <?php /* Start the Loop */ ?>
 
+<?php 
 
+$creterios = array(
+
+        'cat'=>-3,
+        'showposts'=>6,
+        'orderby'=>'date',
+        'order' => 'DESC',
+
+    );
+
+?>
 	
 
 <div class="contenedor">
   <div class="catalogo_cont"><!--Catalogo_cont-->
     <div class="row">
     	<hr>
-<?php while ( have_posts() ) : the_post(); ?>
+<?php
+    $que_posts = new WP_Query($creterios);
+    while ($que_posts->have_posts()):
+        $que_posts->the_post();
+      ?>
     <div class="item_content large-4 medium-6 columns">
 
       <div class="items large-12 medium-12 small-12 columns reset">
-        <div class="fondo_item large-12 medium-12 small-12 columns">
+        <div class="fondo_item large-12 medium-12 small-12 columns reset">
             <div class="imagen">
             <a href="#" data-reveal-id="myModal1">
 
@@ -78,8 +93,7 @@
    </div> 
 </div>
 
-
-<?php //news_relacionados("","Noticias"); ?>
+<?php news_relacionados(); ?>
 
   </div>
   </div><!--Fin catalogo_cont-->

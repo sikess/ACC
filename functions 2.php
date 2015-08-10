@@ -20,23 +20,14 @@ if ( is_readable( $locale_file ) )
  */
 if ( ! isset( $content_width ) )
     $content_width = 640;
-
+// RUTA IMAGENES
+// define('TEMPPATH', get_template_directory_uri('template_directory'));
+// define('IMAGES', TEMPPATH. "/img");
 /**
  * Add jQuery
  */
 
 
-// RUTA IMAGENES
-define('TEMPPATH', get_template_directory_uri('template_directory'));
-define('IMAGES', TEMPPATH. "/img");
-function make_href_root_relative($input) {
-    return preg_replace('!http(s)?://' . $_SERVER['SERVER_NAME'] . '/!', '/', $input);
-}
-
-function root_relative_permalinks($input) {
-    return make_href_root_relative($input);
-}
-add_filter( 'the_permalink', 'root_relative_permalinks' );
 // 
 
 function add_jquery_script() {
@@ -596,18 +587,18 @@ function the_breadcrumb() {
 
 
 ///AGREGAS SIDEBARS
-function miplugin_register_sidebars(){
-    register_sidebar(array(
-        "name" => "Nombre de la Sidebar",
-        "id" => "id-unico-para-la-sidebar",
-        "descripcion" => "Descripción de la Sidebar",
-        "class" => "clase-del-elemento",
-        "before_widget" => "<li id='%1$s' class='%2$s'>",
-        "after_widget" => "</li>",
-        "before_title" => "<h2 class='titulodelwidget'>",
-        "after_title" => "</h2>"
-    ));
-}
+// function miplugin_register_sidebars(){
+//     register_sidebar(array(
+//         "name" => "Nombre de la Sidebar",
+//         "id" => "id-unico-para-la-sidebar",
+//         "descripcion" => "Descripción de la Sidebar",
+//         "class" => "clase-del-elemento",
+//         "before_widget" => "<li id='%1$s' class='%2$s'>",
+//         "after_widget" => "</li>",
+//         "before_title" => "<h2 class='titulodelwidget'>",
+//         "after_title" => "</h2>"
+//     ));
+// }
 // add_action('widgets_init','miplugin_register_sidebars');
 ///.AGREGAS SIDEBARS
 

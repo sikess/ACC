@@ -3,7 +3,11 @@
  * @package WordPress
  * @subpackage themename
  */
-
+include("prod_relacionados.php");
+include("news_relacionados.php");
+// RUTA IMAGENES
+define('TEMPPATH', get_template_directory_uri('template_directory'));
+define('IMAGES', TEMPPATH. "/img");
 /**
  * Make theme available for translation
  * Translations can be filed in the /languages/ directory
@@ -20,21 +24,34 @@ if ( is_readable( $locale_file ) )
  */
 if ( ! isset( $content_width ) )
     $content_width = 640;
-
+// RUTA IMAGENES
+// define('TEMPPATH', get_template_directory_uri('template_directory'));
+// define('IMAGES', TEMPPATH. "/img");
 /**
  * Add jQuery
  */
+
+
+// 
+
 function add_jquery_script() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js');
-    wp_enqueue_script( 'jquery' );
+    // wp_deregister_script( 'add_jquery_script' );
+    wp_register_script( 'add_jquery_script',  get_stylesheet_directory_uri() . '/js/vendor/jquery.js');
+    wp_enqueue_script( 'add_jquery_script' );
 }    
 add_action('wp_enqueue_scripts', 'add_jquery_script');
+
+function foundationjs() {
+  
+    wp_register_script( 'foundationjs',  get_stylesheet_directory_uri() . '/js/foundation.min.js');
+    wp_enqueue_script( 'foundationjs' );
+}    
+add_action('wp_enqueue_scripts', 'foundationjs');
 
 
 function modernizr() {
     
-    wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js');
+    wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/vendor/modernizr.js');
     wp_enqueue_script( 'modernizr' );
 }    
 add_action('wp_enqueue_scripts', 'modernizr');
@@ -46,6 +63,7 @@ function js_scroll() {
     wp_enqueue_script( 'js_scroll' );
 }    
 add_action('wp_enqueue_scripts', 'js_scroll');
+
 
 /**
  * Remove code from the <head>
@@ -71,6 +89,9 @@ add_filter('the_generator', 'hcwp_remove_version');*/
 }
 add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );*/
 
+/**
+ * Remove meta boxes from Post and Page Screens
+ */
 /**
  * Remove meta boxes from Post and Page Screens
  */
@@ -210,6 +231,7 @@ function themename_configure_dashboard_menu() {
         // unset($submenu['themes.php'][5]); // Themes
         // unset($submenu['themes.php'][12]); // Editor
 }
+
 
 
 // For non-admins, add action to Hide Dashboard Widgets and Admin Menu Items you just set above
@@ -510,28 +532,25 @@ function popularPosts($num) {
 
 
 
+
 ////CORTADOR DE IMAGENES
 if ( function_exists( 'add_image_size' ) ) {  
-    add_image_size('para_los_post', 367, 181, true); 
-    add_image_size('mas_comentados', 126, 75, true); 
-    add_image_size('side_bar', 80, 80, true);
-    add_image_size('entrada', 719, 440, true);
-   
+    add_image_size('post', 300, 285, true); 
+    add_image_size('noticias', 481, 349, true);
 }  
 
 
 add_filter('image_size_names_choose', 'hmuda_image_sizes');  
 function hmuda_image_sizes($sizes) {  
     $addsizes = array(  
-        "para_los_post" => __("Cada post"),
-        "mas_comentados" => __("Mas comentados"),
-        "side_bar" => __("Para sidebar"),
-        "entrada" => __("Normal"),
+        "post" => __("Post"),
+        "noticias" => __("Noticias"),
     );  
     $newsizes = array_merge($sizes, $addsizes);  
     return $newsizes;  
 }  
 ////FIN CORTADOR DE IMAGENES
+
 
 
 
@@ -565,7 +584,7 @@ function the_content_limit($max_char, $more_link_text = '(more...)', $striptease
      $content = apply_filters('the_content', $content);
      $content = str_replace(']]>', ']]&gt;', $content);
      $content = strip_tags($content);
-    if (strlen($_GET['p']) > 0) {
+    if (strlen($_GET['p']) > $max_char) {
          // echo "<p>";
          echo $content;
          echo "...";
@@ -593,7 +612,6 @@ function the_content_limit($max_char, $more_link_text = '(more...)', $striptease
          // echo "</p>";
      }
  }
-
 
 
 // PARA COLOREAR FONDO DE ITEM SELECCIONADO DEL MENU PRINCIPAL
@@ -689,78 +707,6 @@ echo $output;
 
 
 
-// BUCLE PARA LOS POST MAS COMENTADOS
-function mas_comentados($titulo){
-
-$args = array(
-
-        //'showposts'=>10,
-        'orderby'=>'date',
-        'order' => 'DESC',
-
-    );
- $ncomentario=get_comments_number();
-
-    echo '<div class="elements_mas_coment">';
-    echo '<div class="titulo_seccion">';echo $titulo; echo'</div>';
-    // $que_posts = new WP_Query($args);
-    // while ($que_posts->have_posts()):
-
-    $que_posts = new WP_Query($args, 'offset=20');
-    while ($que_posts->have_posts() ) : $que_posts->the_post(); 
-
-       // $tieneComments = (get_comments_number()>0) ? true : false;
-      //  if ($tieneComments){
-       
-        //if ():
-           // echo"paso";
-
-            echo '<div class="contne_mas_coment">';
-            echo '<div class="cuerp_mas_comet">';
-            $que_posts->the_post();
- 
-                          
-            echo '<div class="img_pots_mas_coment">';
-                echo'<a href="'; the_permalink(); echo'">'; the_post_thumbnail('mas_comentados'); echo'</a>';
-            echo '</div>';
-
-            echo'<div class="titulo_post_mas_coment">';
-              echo'<a href="'; the_permalink(); echo'">'; the_title(); echo'</a>';
-             /*the_excerpt();*/
-            echo'</div>';
-
-        echo'<div class="foot_comentado">';
-
-            echo "<ul>";
-                    echo "<li>"; comments_popup_link( __( '<span class="imgc"></span>', 'themename' ) );echo "</li>";
-                    //echo "<li>|</li>";
-                     echo "<li>";   printf( __( '<a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a>', 'themename' ),
-                                    get_permalink(),
-                                    get_the_date( 'c' ),
-                                    get_the_date(),
-                                    get_author_posts_url( get_the_author_meta( 'ID' ) ),
-                                    sprintf( esc_attr__( 'Ver por %s', 'themename' ), get_the_author() ),
-                                    get_the_author());
-                    echo "</li>"; 
-                    echo "<li>|</li>";       
-                    echo "<li>";the_category( ', ' );echo"</li>";              
-             echo "</ul>";
-        echo'</div>';//.foot_comentado
-       
-        echo'</div>';//.contne_mas_coment
-        echo'</div>';//..cuerp_mas_comet
-
-    endwhile;
-    echo'</div>';
- //endif;   
-
-}
-
-// .BUCLE PARA LOS POST MAS COMENTADOS
-
-
-
-
 // BUCLE PARA LOS POST RELACIONADOS
 function relacionados($titulo){
 
@@ -827,6 +773,7 @@ $args = array(
  //endif;   
 
 }
+
 
 // .BUCLE PARA LOS POST RELACIONADOS
 
@@ -934,7 +881,6 @@ function round_num($num, $to_nearest) {
    /*Round fractions down (http://php.net/manual/en/function.floor.php)*/
    return floor($num/$to_nearest)*$to_nearest;
 }
- 
 /* Function that performs a Boxed Style Numbered Pagination (also called Page Navigation).
    Function is largely based on Version 2.4 of the WP-PageNavi plugin */
 function pagenavi($before = '', $after = '') {
@@ -1104,7 +1050,6 @@ add_action('draft_to_publish', 'auto_post_thumbnail');
 add_action('new_to_publish', 'auto_post_thumbnail');
 add_action('pending_to_publish', 'auto_post_thumbnail');
 add_action('future_to_publish', 'auto_post_thumbnail');
-
 
 
 

@@ -185,7 +185,7 @@
 <?php 
  if (is_home()){
 
- get_template_part( 'slider', 'index' );
+ get_template_part( 'slider');
 
 }
  ?>

@@ -33,7 +33,7 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 	
-			</div><!-- #content --><?php //prod_relacionados("","Productos"); ?>
+			</div><!-- #content --><?php prod_relacionados(); ?>
 		</div><!-- #primary -->
 
 

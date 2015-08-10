@@ -1,22 +1,17 @@
 <?php 
 // BUCLE PARA LOS POST RELACIONADOS
-function prod_relacionados($titulo,$cates){
+function prod_relacionados(){
 
+$criterioprod = array(
 
-//$cates=current_category();
-
-$args = array(
-
-        'cat'=>$cates,
+        'cat'=>4,
         'showposts'=>3,
         'orderby'=>'date',
         'order' => 'DESC',
 
     );
- $ncomentario=get_comments_number();
+ //$ncomentario=get_comments_number();
 ?>
-
-
     <div class="conternedor">
     <div class="row">
  <hr>
@@ -30,7 +25,7 @@ $args = array(
     </div>
     <hr>  
 <?php
-    $que_posts = new WP_Query($args);
+    $que_posts = new WP_Query($criterioprod);
     while ($que_posts->have_posts()):
         $que_posts->the_post();
       ?>
