@@ -23,7 +23,7 @@ get_header(); ?>
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
-						<hr>
+						
 					
 				</article><!-- #post-<?php the_ID(); ?> -->
 
@@ -45,5 +45,5 @@ get_header(); ?>
 
 <div class="contenedor"><!-- Footer -->
 	<?php get_footer();  ?>
-	<?php wp_footer(); ?>
+	<?php //wp_footer(); ?>
 </div><!-- .Footer -->

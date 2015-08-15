@@ -617,6 +617,24 @@ vertical-align: middle !important;
 }
 
 
+.contain-to-grid, .sticky, .top-bar{
+	background-color: transparent !important;
+}
+
+
+.f-topbar-fixed .fixed{ 
+	background-color: @amarillo !important;
+	height: 65px !important;
+	.sombra_;
+	padding-top: 0 !important;
+	border-bottom: 5px solid @rojo;
+	}
+
+.fixed{
+background-color: transparent !important;
+}
+
+
 /*////FIN MENU NAV//////*/	
 
 
@@ -1140,10 +1158,15 @@ button[type="submit"], input[type="submit"]{
 
 .format_text_news p{
 	text-align: justify;
+	// color: @rojo;
+	font-size: 16px;
 }
 
 .format_text_news ul{
-	// .reset;
+	.reset;
+	text-align: justify;
+	color: @rojo;
+	font-size: 14px;
 }
 
 
@@ -1396,13 +1419,16 @@ button[type="submit"], input[type="submit"]{
 	float: left; 	
 	width: 40px;
 	text-align: center;
+	color: @rojo;
+	padding-left: 50px;
 	
 }
 
 .dato{
-	width: 120px;
+	width: 220px !important;
 	float: left;
-	padding: 10px;
+	padding: 10px 10px 10px 40px;
+	color: @rojo;
 }
 .fondo_griss{
 	// background-color: #EFEFEF;
@@ -1422,3 +1448,7 @@ button[type="submit"], input[type="submit"]{
 .modal_border {
 	border-bottom: 10px solid @rojo;
 }
+
+.padding_dere_bottom{
+	padding:0 10px 10px 0;
+	 }

@@ -116,10 +116,10 @@
         </div>
         
         <div class="hide-for-small">
-          <div class="large-6 medium-6 small-6 columns hide-for-small">
+          <div class="large-6 medium-6 small-6 columns hide-for-small reset">
             <div class="lista_head">
             <ul class="">
-               <li><i class="fi-mail size_icon paddig_icon"></i>info@autocristalecolombia.com</li>
+               <li><i class="fi-mail size_icon paddig_icon"></i>contacto@autocristalecolombiasas.com</li>
                <li ><i class="fi-telephone size_icon paddig_icon"></i>+58 253-23-23</li>
              </ul> 
           </div>
@@ -130,6 +130,11 @@
 
 <div class="contenedor">
   <div class="row ">
+
+<div class="div large-12 contain-to-grid sticky">
+  <nav class="top-bar  hide-for-small-only" data-topbar role="navigation" data-options="sticky_on: large">
+
+
    <div class="large-2 medium-2 columns  hide-for-small reset">
     <div id="inicio_link">
       <ul id="" class="">
@@ -143,17 +148,30 @@
 </div>
 
 <div class="large-10 medium-10 columns reset"><!-- MENU HIDE -->
- 
- <div class="off-canvas-wrap show-for-small-only" >
+
+  <div class="menu_principal large-12 columns hide-for-small">
+  	<div id="access" role="navigation" class="contiene_mp">
+        <?php wp_nav_menu( array( 'container_class' => 'menu-header','theme_location' => 'primary' ) );?>
+      </div>
+  </div>
+
+
+
+
+
+  </nav>
+
+
+<div class="off-canvas-wrap show-for-small-only" >
 
   <nav class="top-bar bg_amarillo" data-topbar role="navigation">
-	  <ul class="title-area bg_amarillo mi_tb">
-	    <li class="name">
-	      <h1><a href="<?php home_url('/'); ?>"><i class="fi-home tm"> </i></a></h1>
-	    </li>
-	     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-	    <li class="toggle-topbar  bg_amarillo mi_tb"><a href="#"><i class="fi-list tm"> </i></a></li>
-	  </ul>
+  <ul class="title-area bg_amarillo mi_tb">
+    <li class="name">
+      <h1><a href="index.php"><i class="fi-home tm"> </i></a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar  bg_amarillo mi_tb"><a href="#"><i class="fi-list tm"> </i></a></li>
+  </ul>
 
   <section class="top-bar-section bg_amarillo mi_tb">
     <!-- Right Nav Section -->
@@ -168,19 +186,16 @@
       <li class="bg_amarillo mi_tb"><a href="#"><i class="fi-download tm"> </i>DESCARGAS</a></li>
     </ul>
   </section>
- </nav>
+</nav>
 </div>
-
-<div class="menu_principal large-12 columns hide-for-small">
-	<div id="access" role="navigation" class="contiene_mp">
-      <?php wp_nav_menu( array( 'container_class' => 'menu-header','theme_location' => 'primary' ) );?>
-    </div>
 
 </div>
 
-  </div>
+</div>
+
  </div>
 </div>
+
 
 <?php 
  if (is_home()){
